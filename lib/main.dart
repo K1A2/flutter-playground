@@ -2,11 +2,15 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_playground/2fa/2fa.dart';
 import 'package:flutter_playground/firebase_options.dart';
+import 'package:kakao_flutter_sdk/kakao_flutter_sdk.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
+  );
+  KakaoSdk.init(
+    nativeAppKey: 'b5631d0a26bae0bcc8ef2b7a636a418b'
   );
   runApp(const MyApp());
 }

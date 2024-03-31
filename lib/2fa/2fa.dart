@@ -28,7 +28,7 @@ class LoginPage extends StatelessWidget {
                       final response = await http.get(Uri.parse('http://127.0.0.1:8000/api/v1/oauth/verify/google'), headers: {
                         'Authorization': 'Bearer ${googleAuthentication.accessToken}'
                       });
-                      print(response.body);
+                      print(response.statusCode);
                     }
                   },
                 ),

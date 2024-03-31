@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:http/http.dart' as http;
 
 class LoginPage extends StatelessWidget {
   @override
@@ -24,6 +25,10 @@ class LoginPage extends StatelessWidget {
                     if (googleAccount != null) {
                       GoogleSignInAuthentication googleAuthentication = await googleAccount!.authentication;
                       print(googleAuthentication.accessToken);
+                      final response = await http.get(Uri.parse('http://127.0.0.1:8000/api/v1/oauth/verify/google'), headers: {
+                        'Authorization': 'Bearer ${googleAuthentication.accessToken}'
+                      });
+                      print(response.body);
                     }
                   },
                 ),

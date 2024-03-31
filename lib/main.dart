@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_playground/2fa/2fa.dart';
 import 'package:flutter_playground/firebase_options.dart';
 
 void main() async {
@@ -47,7 +48,7 @@ class _HomeState extends State<Home> {
                 child: FilledButton(
                   child: const Text('2fa 로그인 하기'),
                   onPressed: () {
-
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => LoginPage()));
                   },
                 ),
               )

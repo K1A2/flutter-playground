@@ -45,15 +45,18 @@
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
-	<key>CFBundleURLTypes</key>
+    <key>GIDClientID</key>
+    <string>770421348472-4carpobajf8h077g2mkq8ockqi6ikc3r.apps.googleusercontent.com</string>
+    <key>CFBundleURLTypes</key>
     <array>
-        <dict>
-        <key>CFBundleURLSchemes</key>
-        <array>
-            <!-- google login -->
-            <string>com.googleusercontent.apps.770421348472-4carpobajf8h077g2mkq8ockqi6ikc3r</string>
-        </array>
-        </dict>
+    	<dict>
+    		<key>CFBundleTypeRole</key>
+    		<string>Editor</string>
+    		<key>CFBundleURLSchemes</key>
+    		<array>
+    			<string>com.googleusercontent.apps.770421348472-4carpobajf8h077g2mkq8ockqi6ikc3r</string>
+    		</array>
+    	</dict>
     </array>
 </dict>
 </plist>

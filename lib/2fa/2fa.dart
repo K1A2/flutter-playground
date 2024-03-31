@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_naver_login/flutter_naver_login.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:http/http.dart' as http;
 import 'package:kakao_flutter_sdk/kakao_flutter_sdk.dart';
@@ -39,7 +40,7 @@ class LoginPage extends StatelessWidget {
                 width: double.infinity,
                 child: FilledButton(
                   style: FilledButton.styleFrom(
-                      backgroundColor: Colors.yellowAccent
+                      backgroundColor: Colors.yellow[800]
                   ),
                   child: const Text('Kakao'),
                   onPressed: () async {
@@ -78,6 +79,32 @@ class LoginPage extends StatelessWidget {
                         'Authorization': 'Bearer ${token.accessToken}'
                       });
                       print('Kakao: ${response.statusCode}');
+                    }
+                  },
+                ),
+              ),
+              SizedBox(
+                width: double.infinity,
+                child: FilledButton(
+                  style: FilledButton.styleFrom(
+                      backgroundColor: Colors.green[700]
+                  ),
+                  child: const Text('Naver'),
+                  onPressed: () async {
+                    NaverLoginResult? result;
+                    try {
+                      result = await FlutterNaverLogin.logIn();
+                    } catch (error) {
+                      print(error);
+                    }
+                    if (result != null) {
+                      var token = (await FlutterNaverLogin.currentAccessToken).accessToken;
+                      print('Naver: ${token}');
+                      final response = await http.get(Uri.parse('http://192.168.0.7:8000/api/v1/oauth/verify/naver'), headers: {
+                        'Authorization': 'Bearer ${token}'
+                      });
+                      print('Naver: ${response.statusCode}');
+                      FlutterNaverLogin.logOut();
                     }
                   },
                 ),

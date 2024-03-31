@@ -30,6 +30,7 @@
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>com.googleusercontent.apps.770421348472-4carpobajf8h077g2mkq8ockqi6ikc3r</string>
+				<string>hjdui04hsifis</string>
 			</array>
 		</dict>
 		<dict>
@@ -49,6 +50,8 @@
 	<array>
 		<string>kakaokompassauth</string>
 		<string>kakaolink</string>
+		<string>naversearchapp</string>
+        <string>naversearchthirdlogin</string>
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
@@ -71,5 +74,13 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>naverConsumerKey</key>
+    <string>pJRlLZ5HdagtO9_qUbQw</string>
+    <key>naverConsumerSecret</key>
+    <string>b_kLKIWQrt</string>
+    <key>naverServiceAppName</key>
+    <string>playground</string>
+    <key>naverServiceAppUrlScheme</key>
+    <string>hjdui04hsifis</string>
 </dict>
 </plist>
